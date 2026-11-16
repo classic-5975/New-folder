@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table in HTML</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        table {
+            width: 80%;
+            max-width: 900px;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        caption {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e293b;
+            padding: 20px;
+            caption-side: top;
+        }
+
+        thead {
+            background: #1e293b;
+            color: white;
+        }
+
+        th {
+            padding: 18px 24px;
+            text-align: left;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 16px 24px;
+            font-size: 15px;
+            color: #334155;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        tbody tr:hover {
+            background: #e0f2fe;
+            cursor: pointer;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        td:last-child {
+            font-weight: 600;
+            color: #15803d;
+        }
+
+        @media (max-width: 600px) {
+            table {
+                width: 100%;
+            }
+
+            th,
+            td {
+                padding: 12px 10px;
+                font-size: 13px;
+            }
+
+            caption {
+                font-size: 23px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <caption>Employee data</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rohit</td>
+                <td>Software Developer</td>
+                <td>$400,000</td>
+            </tr>
+            <tr>
+                <td>Ghanshyam</td>
+                <td>AI Engineer</td>
+                <td>$350,000</td>
+            </tr>
+            <tr>
+                <td>Roudra</td>
+                <td>Software manager</td>
+                <td>$100,000</td>
+            </tr>
+            <tr>
+                <td colspan="3"> Thank </td>
+            </tr>
+            <tr>
+                <td colspan="3"> You </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

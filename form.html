@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+    <style>
+        /* Universal Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 15px;
+        }
+
+        /* Heading */
+        h1 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        /* Form Container */
+        form {
+            width: 100%;
+            max-width: 550px;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Form Divisions */
+        form div {
+            margin-bottom: 20px;
+        }
+
+        /* Labels */
+        form div>label {
+            display: inline-block;
+            color: #334155;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        /* Text, Email, Telephone and Number Inputs */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            background: #f8fafc;
+            transition: 0.3s ease;
+        }
+
+        /* Input Focus Effect */
+        input:focus,
+        select:focus {
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+        }
+
+        /* Placeholder */
+        input::placeholder {
+            color: #94a3b8;
+        }
+
+        /* Radio Buttons */
+        input[type="radio"] {
+            accent-color: #667eea;
+            margin: 5px 5px 5px 8px;
+            cursor: pointer;
+        }
+
+        /* Radio Button Labels */
+        input[type="radio"]+label {
+            display: inline;
+            font-weight: 400;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* Checkbox */
+        input[type="checkbox"] {
+            accent-color: #667eea;
+            cursor: pointer;
+            margin-right: 7px;
+        }
+
+        /* Checkbox Label */
+        input[type="checkbox"]+label {
+            display: inline;
+            cursor: pointer;
+        }
+
+        /* Select Dropdown */
+        select {
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        input[type="reset"],
+        input[type="submit"] {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        /* Reset Button */
+        input[type="reset"] {
+            background: #e2e8f0;
+            color: #334155;
+            margin-right: 10px;
+        }
+
+        input[type="reset"]:hover {
+            background: #cbd5e1;
+        }
+
+        /* Submit Button */
+        input[type="submit"] {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.35);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 500px) {
+            form {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            input[type="reset"],
+            input[type="submit"] {
+                padding: 11px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML Form</h1>
+    <form action="submit.php" method="GET">
+        <div>
+            <label for="fname">First name:</label>
+            <input id="fname" name="fname" type="text" placeholder="Enter First Name" required>
+        </div>
+        <div>
+            <label for="mname">Middle Name:</label>
+            <input type="text" id="mname" name="mname" placeholder="Enter Middle Name" required>
+        </div>
+        <div>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter Last Name" required>
+        </div>
+        <div>
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" placeholder="Enter your Email">
+        </div>
+        <div>
+            <label for="ph">Phone:</label>
+            <input type="tel" id="ph" name="Phone" placeholder="+91xxxxx xxxxx">
+        </div>
+        <div>
+            <label for="gender">Gender:</label>
+
+            <input type="radio" id="Male" name="gender" value="Male">
+            <label for="Male">Male</label>
+
+            <input type="radio" id="Female" name="gender" value="Female">
+            <label for="Female">Female</label>
+
+            <input type="radio" id="Other" name="gender" value="Other">
+            <label for="Other">Other</label>
+        </div>
+        <div>
+            <label for="quantity">Body Count:</label>
+            <input type="number" id="quantity" min="0" max="999" placeholder="WTF!">
+        </div>
+        <div>
+            <label for="payment">Payment Method:</label>
+            <select name="payment" id="payment">
+                <option value="default"></option>
+                <option value="UPI">UPI</option>
+                <option value="NetBanking">NetBanking</option>
+                <option value="CreditCard">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+            </select>
+        </div>
+        <div>
+            <input type="checkbox" id="TC">
+            <label for="TC">Terms & Conditions</label>
+        </div>
+        <div>
+            <input type="reset">
+            <input type="submit">
+        </div>
+    </form>
+</body>
+
+</html>
